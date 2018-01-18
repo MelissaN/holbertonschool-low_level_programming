@@ -6,8 +6,8 @@ into another file.
   * The C file name will be saved in the variable `$CFILE`
   * The output should be saved in the file `c`
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ cat main.c 
     #include <stdio.h>
     
@@ -35,6 +35,7 @@ into another file.
     }
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -50,8 +51,8 @@ Write a script that compiles a C file but does not link.
   * The output file should be named the same as the C file, but with the extension `.o` instead of `.c`. 
     * Example: if the C file is `main.c`, the output file should be `main.o`
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ export CFILE=main.c
     julien@ubuntu:~/c/0x00$ cat main.c
     #include <stdio.h>
@@ -73,6 +74,7 @@ Write a script that compiles a C file but does not link.
     ^?ELF^B^A^A^@^@^@^@^@^@^@^@^@^A^@>^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^P^B^@^@^@^@^@^@^@^@^@^@@^@^@^@^@^@@^@^K^@^H^@UHM-^IM-eM-8^@^@^@^@]M-C^@GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.2) 5.4.0 20160609^@^T^@^@^@^@^@^@^@^AzR^@^Ax^P^A^[^L^G^HM-^P^A^@^@^\^@^@^@^\^@^@^@^@^@^@^@^K^@^@^@^@A^N^PM-^F^BC^M^FF^L^G^H^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^D^@M-qM-^?^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^B^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^C^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^E^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^F^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^D^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^H^@^@^@^R^@^A^@^@^@^@^@^@^@^@^@^K^@^@^@^@^@^@^@^@main.c^@main^@^@^@^@ ^@^@^@^@^@^@^@^B^@^@^@^B^@^@^@^@^@^@^@^@^@^@^@^@.symtab^@.strtab^@.shstrtab^@.text^@.data^@.bss^@.comment^@.note.GNU-stack^@.rela.eh_frame^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^[^@^@^@^A^@^@^@^F^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@@^@^@^@^@^@^@^@^K^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@!^@^@^@^A^@^@^@^C^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@K^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@'^@^@^@^H^@^@^@^C^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@K^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@,^@^@^@^A^@^@^@0^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@K^@^@^@^@^@^@^@5^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@5^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M-^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@J^@^@^@^A^@^@^@^B^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M-^@^@^@^@^@^@^@^@8^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^H^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@E^@^@^@^D^@^@^@@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M- ^A^@^@^@^@^@^@^X^@^@^@^@^@^@^@    ^@^@^@^F^@^@^@^H^@^@^@^@^@^@^@^X^@^@^@^@^@^@^@^Q^@^@^@^C^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M-8^A^@^@^@^@^@^@T^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^B^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M-8^@^@^@^@^@^@^@M-X^@^@^@^@^@^@^@
     ^@^@^@^H^@^@^@^H^@^@^@^@^@^@^@^X^@^@^@^@^@^@^@  ^@^@^@^C^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@M-^P^A^@^@^@^@^@^@^M^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -89,8 +91,8 @@ output file.
   * The output file should be named the same as the C file, but with the extension `.s` instead of `.c`. 
     * Example: if the C file is `main.c`, the output file should be `main.s`
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ export CFILE=main.c
     julien@ubuntu:~/c/0x00$ cat main.c
     #include <stdio.h>
@@ -131,6 +133,7 @@ output file.
         .section    .note.GNU-stack,"",@progbits
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -147,14 +150,15 @@ multilingual puzzle`, followed by a new line.
   * You are not allowed to use `printf`
   * Your program should end with the value `0`
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ gcc 4-puts.c && ./a.out
     "Programming is like building a multilingual puzzle
     julien@ubuntu:~/c/0x00$ echo $?
     0
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -169,8 +173,8 @@ Write a script that compiles a C file and creates an executable named
 
   * The C file name will be saved in the variable `$CFILE`
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ export CFILE=main.c
     julien@ubuntu:~/c/0x00$ cat main.c
     #include <stdio.h>
@@ -190,6 +194,7 @@ Write a script that compiles a C file and creates an executable named
     100-intel       2-assembler  c       main.c  main.s
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -207,8 +212,8 @@ a piece of art,`, followed by a new line.
   * Your program should return `0`
   * Your program should compile without warning when using the `-Wall` `gcc` option
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ gcc -Wall 5-printf.c
     julien@ubuntu:~/c/0x00$ ./a.out 
     with proper grammar, but the outcome is a piece of art,
@@ -216,6 +221,7 @@ a piece of art,`, followed by a new line.
     0
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -233,8 +239,8 @@ compiled and run on.
   * Your program should return `0`
   * You might have to install the package `libc6-dev-i386` on your Linux (Vagrant) to test the `-m32` `gcc` option
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ gcc 6-size.c -m32 -o size32 2> /tmp/32
     julien@ubuntu:~/c/0x00$ gcc 6-size.c -m64 -o size64 2> /tmp/64
     julien@ubuntu:~/c/0x00$ ./size32
@@ -253,6 +259,7 @@ compiled and run on.
     0
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -281,8 +288,8 @@ save it in an output file.
   * The output file should be named the same as the C file, but with the extension `.s` instead of `.c`. 
     * Example: if the C file is `main.c`, the output file should be `main.s`
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ export CFILE=main.c
     julien@ubuntu:~/c/0x00$ cat main.c
     #include <stdio.h>
@@ -322,6 +329,7 @@ save it in an output file.
         .section    .note.GNU-stack,"",@progbits
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
@@ -339,8 +347,8 @@ Korpar, 2015-10-19`, followed by a new line, to the standard error.
   * Your program should return 1
   * Your program should compile without any warnings when using the `-Wall` `gcc` option
 
-    
-    
+[code]
+
     julien@ubuntu:~/c/0x00$ gcc -Wall -o quote 101-quote.c
     julien@ubuntu:~/c/0x00$ ./quote
     and that piece of art is useful" - Dora Korpar, 2015-10-19
@@ -353,6 +361,7 @@ Korpar, 2015-10-19`, followed by a new line, to the standard error.
     julien@ubuntu:~/c/0x00$ grep put < 101-quote.c
     julien@ubuntu:~/c/0x00$ 
     
+[/code]
 
 **Repo:**
 
