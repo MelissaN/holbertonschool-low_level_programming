@@ -7,28 +7,27 @@
 
 int main(void)
 {
-	int n = 48;
-	int tens = 48;
-	int skip_digit_combos = 0;
+	int ones;
+	int tens;
 
-	while (tens <= 57) /*increment tens place*/
+	for (tens = '0'; tens <= '9'; tens++) /*increment tens*/
 	{
-		while (n <= 57) /*increment ones place*/
+		for (ones = (tens + 1); ones <= '9'; ones++) /*one's ten+1*/
 		{
-			if (tens != n) /*print all but duplicates 00,11,...*/
+			putchar(tens);
+			putchar(ones);
+
+			if ((tens == '8') && (ones == '9')) /*new line*/
 			{
-				putchar(tens);
-				putchar(n);
+				putchar('\n');
+			}
+			else /*if not last num, separate wtih commas*/
+			{
 				putchar(',');
 				putchar(' ');
 			}
-			n++;
 		}
-		tens++;
-		skip_digit_combos += 1; /*skip same digit combos, 10 same as 01*/
-		n = 48 + skip_digit_combos;
 	}
-	putchar('\n');
 
 	return (0);
 }
