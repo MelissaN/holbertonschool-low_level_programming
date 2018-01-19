@@ -7,24 +7,21 @@
 
 int main(void)
 {
-	int n = 48;
-	int tens = 48;
+	int tens;
+	int ones;
 
-	while (tens <= 57)
+	for (tens = 48; tens <= 57; tens++) /*print tens place*/
 	{
-		while (n <= 57)
+		for (ones = 48; ones <= 57; ones++) /*print ones place*/
 		{
 			putchar(tens);
-			putchar(n);
-			if (n != 57)
+			putchar(ones);
+			if (!((tens == 57) && (ones == 57))) /*skip comma at end*/
 			{
 				putchar(',');
 				putchar(' ');
 			}
-			n++;
 		}
-		tens++;
-		n = 48;
 	}
 	putchar('\n');
 

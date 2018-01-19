@@ -8,16 +8,15 @@
 int main(void)
 {
 	int n = 48;
+	int a_to_f = 97;
 
-	while (n <= 57)
+	while (n <= 57) /*print 0-9*/
 	{
 		putchar(n);
 		n++;
 	}
 
-	int a_to_f = 97;
-
-	while (a_to_f <= 102)
+	while (a_to_f <= 102) /*print a-f to finish hexbase*/
 	{
 		putchar(a_to_f);
 		a_to_f++;
