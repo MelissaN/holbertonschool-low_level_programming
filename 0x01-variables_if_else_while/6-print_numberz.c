@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
+ *main - print 0123456789 using putchar
  *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int n = 48;
+	int n = '0';
 
-	while (n <= 57)
+	while (n <= '9')
 	{
 		putchar(n);
 		n++;

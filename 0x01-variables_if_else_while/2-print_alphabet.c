@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
+ *main - print lowercase a-z
  *Return: Always 0 (Success)
  */
 

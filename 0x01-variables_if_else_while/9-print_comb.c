@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
+ *main - print 0-9 separated with commas, using putchar
  *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int n = 48;
+	int n = '0';
 
-	while (n <= 57)
+	while (n <= '9')
 	{
 		putchar(n);
-		if (n != 57)
+		if (n != '9')
 		{
 			putchar(',');
 			putchar(' ');

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
+ *main - print alphabet reversed using putchar
  *Return: Always 0 (Success)
  */
 
