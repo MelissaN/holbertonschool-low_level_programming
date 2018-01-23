@@ -1,6 +1,6 @@
-## C - Functions, nested loops
+# C - Functions, nested loops
 
-# From coding these files, I learned:
+## From coding these files, I learned:
 * nested loops and how to use them
 * function and how do you use functions
 * difference between a declaration and a definition of a function
