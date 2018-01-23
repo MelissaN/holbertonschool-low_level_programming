@@ -23,7 +23,7 @@ int main(void)
 		if ((sum <= 4000000) && (sum % 2 == 0))
 			sum_of_evens += sum;
 	}
-	printf("%lu \n", sum_of_evens);
+	printf("%lu\n", sum_of_evens);
 
 	return (0);
 }
