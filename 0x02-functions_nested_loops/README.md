@@ -1,11 +1,10 @@
+# Functions and nested loops
 
-# Project Title
-
-These files contain functions and code snippets showing how to use prototyping in headerfiles and write functions in separate C files.
+These files contain sample functions and code snippets showing how to use prototyping in headerfiles and write functions in separate C files. 
 
 ## Requirements
 
-Bash terminal, Ubuntu 14.04 LTS
+* Bash terminal, Ubuntu 14.04 LTS
 
 ## Built With
 
