@@ -18,7 +18,7 @@ int main(void)
 
 	for (counter = 2; counter < 93; counter++) /* will still print */
 	{
-	       	sum = a + b;
+		sum = a + b;
 		a = b;
 		b = sum;
 		printf(", %lu", sum);
