@@ -29,7 +29,7 @@ int main(void)
 	b_head = b / 1000000000;
 	b_tail = b % 1000000000;
 
-	for (; counter < 98; counter++)
+	for (; counter < 99; counter++)
 	{
 		overflow = (a_tail + b_tail) / 1000000000;
 		sum_tail = (a_tail + b_tail) - (1000000000 * overflow);
