@@ -7,10 +7,10 @@
 
 int main(void)
 {
-	unsigned long int sum_of_evens = 0;
-	unsigned long int a;
-	unsigned long int b;
-	unsigned long int sum = 1;
+	int sum_of_evens = 0;
+	int a;
+	int b;
+	int sum = 1;
 
 	a = 1;
 	b = 1;
@@ -23,7 +23,7 @@ int main(void)
 		if ((sum <= 4000000) && (sum % 2 == 0))
 			sum_of_evens += sum;
 	}
-	printf("%lu\n", sum_of_evens);
+	printf("%d\n", sum_of_evens);
 
 	return (0);
 }
