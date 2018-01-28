@@ -8,25 +8,20 @@
 int main(void)
 {
 	int counter;
-	unsigned long int a;
-	unsigned long int b;
-	unsigned long int sum;
+	int countto = 50;
+	long a = 1;
+	long b = 2;
 
-	a = 1;
-	b = 1;
-
-	printf("1, ");
-
-	for (counter = 2; counter <= 50; counter++)
+	for (counter = 1; counter <= (countto / 2); counter++)
 	{
-		sum = a + b;
-		a = b;
-		b = sum;
-		if (counter < 50)
-			printf("%lu, ", sum);
-		else
-			printf("%lu\n", sum);
+		printf("%li %li ", a, b);
+		a += b;
+		b += a;
 	}
+	if (countto % 2 == 1)
+		printf("%li", a);
+
+	printf("\n");
 
 	return (0);
 }
