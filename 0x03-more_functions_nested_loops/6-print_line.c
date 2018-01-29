@@ -7,15 +7,8 @@
 
 void print_line(int n)
 {
-	int draw;
-
-	if (n > 0)
-	{
-		for (draw = 1; draw <= n; draw++)
-		{
-			_putchar('_');
-		}
-	}
+	int times = n;
+	for (times = n; times > 0; times--)
+		_putchar('_');
 	_putchar('\n');
-
 }
