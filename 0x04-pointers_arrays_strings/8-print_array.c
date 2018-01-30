@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * print_array - prints n elements of an array of integers, followed by a new line
+ * print_array - prints n elements of an array of integers
  * @a: array
  * @n: number of elements
  */

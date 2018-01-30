@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - returns the length of a string
+ * _strlen - returns the length of a string
  * @s: string
+ * Return: length
  */
 
 int _strlen(char *s)
@@ -19,7 +20,7 @@ int _strlen(char *s)
 }
 
 /**
- * print_rev - reverses a string
+ * rev_string - reverses a string
  * @s: string to reverse
  */
 
