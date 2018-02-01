@@ -71,7 +71,7 @@ int _atoi(char *s)
 	int sign;
 	int digits_to_print = 0;
 	int t = 1, i;
-	unsigned num = 0;
+	unsigned int num = 0;
 	int digit = (idx_num_starts(s));
 
 	if (idx_digit_starts < 0) /* if no digits found, exit program */
