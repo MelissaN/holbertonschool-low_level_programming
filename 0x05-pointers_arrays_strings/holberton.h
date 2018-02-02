@@ -70,4 +70,20 @@ char *string_toupper(char *);
 
 char *cap_string(char *s);
 
+/**
+ * rot13 - encode string using rot13
+ * @s: string to encode
+ * Return: encoded string
+ */
+
+char *rot13(char *s);
+
+/**
+ * leet - encode string into 1337 leet
+ * @s: string to manipulate
+ * Return: string
+ */
+
+char *leet(char *s);
+
 #endif
