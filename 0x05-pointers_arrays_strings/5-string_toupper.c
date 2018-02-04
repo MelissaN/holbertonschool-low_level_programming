@@ -18,3 +18,15 @@ char *string_toupper(char *s)
 	}
 	return (s);
 }
+
+/* another method with pointer notation
+
+char *string_toupper(char *s)
+{
+        while (*s) //if s exists will omit null terminator
+	    if (*s >= 'a' && *s <= 'z')
+	        *s = *s -'a' + 'A';
+	    s++;
+
+}
+*/
