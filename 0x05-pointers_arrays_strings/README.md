@@ -16,9 +16,9 @@ This repository holds some projects I worked on for Holberton School. The goal i
 
 ## Description of what each file does:
 0. function that concatenates two strings
-1. function that returns a concatenate of two strings
-2. function that copies and returns a string
-3. function that compares a string and returns a number
+1. function that returns and concatenates n bytes of another string
+2. function that returns and copies n bytes of a string and fills '\0' till end of n bytes
+3. function that compares two strings and returns a number re distance of values
 4. function that reverses the content of an array of integers
 5. function that changes all lowercase letters of a string to uppercase
 6. function that capitalizes first letter of all words of a string
