@@ -57,8 +57,8 @@ char *_strpbrk(char *s, char *accept);
 
 /**
  * _strstr - locate and return pointer to first occurence of substring
- * @haystack: string to loom through
- * @needle: target substring to find
+ * @haystack: string to search
+ * @needle: target substring to search for
  * Return: pointer to index of string at first occurence of whole substring
  */
 
@@ -78,5 +78,13 @@ void print_chessboard(char (*a)[8]);
  */
 
 void print_diagsums(int *a, int size);
+
+/**
+ * set_string - set value of pointer to a char
+ * @s: variable of type pointer
+ * @to: char
+ */
+
+void set_string(char **s, char *to);
 
 #endif
