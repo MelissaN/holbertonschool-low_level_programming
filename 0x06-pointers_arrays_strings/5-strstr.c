@@ -30,8 +30,7 @@ char *_strstr(char *haystack, char *needle)
 			} /* if matched throughout, return haystack */
 			if (needle[j] == '\0')
 			{
-				haystack = &haystack[i];
-				return (haystack);
+				return (haystack + i);
 			}
 			else
 				break;
