@@ -11,14 +11,14 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j = 0, x;
 
-	if (needle == '\0')
+	if (needle[0] == '\0')
 		return (haystack);
 
 	while (haystack[i] != '\0') /* iterate through haystack */
 	{
 		/* if a byte matches first char of needle */
 		/* interate through needle until match ends */
-		if (haystack[i] == needle [0])
+		if (haystack[i] == needle[0])
 		{
 			x = i;
 			while (needle[j] != '\0')
