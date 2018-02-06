@@ -55,4 +55,28 @@ unsigned int _strspn(char *s, char *accept);
 
 char *_strpbrk(char *s, char *accept);
 
+/**
+ * _strstr - locate and return pointer to first occurence of substring
+ * @haystack: string to loom through
+ * @needle: target substring to find
+ * Return: pointer to index of string at first occurence of whole substring
+ */
+
+char *_strstr(char *haystack, char *needle);
+
+/**
+ * print_chessboard - print chessboard given set 2D array
+ * @a: 2D array
+ */
+
+void print_chessboard(char (*a)[8]);
+
+/**
+ * print_diagsums - print sums of diagonals in matrix
+ * @a: matrix
+ * @size: size of matrix
+ */
+
+void print_diagsums(int *a, int size);
+
 #endif
