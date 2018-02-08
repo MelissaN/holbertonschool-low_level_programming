@@ -10,12 +10,12 @@
 int compare(char *head, char *tail)
 {
 
-	if (*head == *tail && &tail < &head)
-		compare(head + 1, tail - 1);
-	if (*head != *tail)
-		return (0);
+	if ((*head == *tail))
+		return (compare(head + 1, tail - 1));
+	else if (head >= tail)
+		return (1);
 
-	return (1);
+	return (0);
 }
 
 /**

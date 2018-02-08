@@ -12,11 +12,17 @@ int main(void)
 
 	r = is_palindrome("level");
 	printf("%d\n", r);
-	r = is_palindrome("redder");
+	r = is_palindrome("abcdecba");
 	printf("%d\n", r);
 	r = is_palindrome("holberton");
 	printf("%d\n", r);
 	r = is_palindrome("step on no pets");
 	printf("%d\n", r);
+	r = is_palindrome(" ");
+	printf("%d\n", r);
+	r = is_palindrome("0 0");
+	printf("%d\n", r);
+
+
 	return (0);
 }
