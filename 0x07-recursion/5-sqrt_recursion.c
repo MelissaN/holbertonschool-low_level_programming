@@ -2,7 +2,7 @@
 
 /**
  * increment_root - increment potential root by one to retest if square root
- * @n: number to find square root of
+ * @num: number to find square root of
  * @root: test this root
  * Return: natural square root, or -1 if not natural root
  */
@@ -21,7 +21,7 @@ int increment_root(unsigned int num, int root)
 
 /**
  * decrement_root - decrement potential root by one to retest if square root
- * @n: number to find square root of
+ * @num: number to find square root of
  * @root: test this root
  * Return: natural square root, or -1 if not natural root
  */
