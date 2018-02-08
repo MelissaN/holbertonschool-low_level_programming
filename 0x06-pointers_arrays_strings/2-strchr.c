@@ -15,10 +15,23 @@ char *_strchr(char *s, char c)
 		i++;
 
 	if (s[i] == c) /* if match, assign to address */
-	{
-		s = &s[i];
-		return (s);
-	}
+		return (&s[i]);
 	else
 		return (0);
 }
+
+/* pointer arithmetic version
+
+char *_strchr(char *s, char c)
+{
+        int i = 0;
+
+	while (*(s + i) && *(s + i) != c)
+	    i++;
+
+	if (*(s + i) == c)
+	    return (s + i);
+	else
+	    return (0);
+}
+*/
