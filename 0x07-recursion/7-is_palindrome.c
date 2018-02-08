@@ -10,7 +10,7 @@
 int compare(char *head, char *tail)
 {
 
-	if ((*head == *tail))
+	if (*head == *tail)
 		return (compare(head + 1, tail - 1));
 	else if (head >= tail)
 		return (1);
