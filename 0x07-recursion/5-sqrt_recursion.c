@@ -7,13 +7,13 @@
  * Return: natural square root, or -1 if not natural root
  */
 
-int increment_root(int n, int root)
+int increment_root(unsigned int num, int root)
 {
-	int product = root * root;
+	unsigned long product = root * root;
 
-	if (product < n)
-		return (increment_root(n, root - 1));
-	else if (product == n)
+	if (product < num)
+		return (increment_root(num, root - 1));
+	else if (product == num)
 		return (root);
 	else
 		return (-1);
@@ -26,13 +26,13 @@ int increment_root(int n, int root)
  * Return: natural square root, or -1 if not natural root
  */
 
-int decrement_root(int n, int root)
+int decrement_root(unsigned int num, int root)
 {
-	int product = root * root;
+	unsigned long product = root * root;
 
-	if (product > n)
-		return (decrement_root(n, root - 1));
-	else if (product == n)
+	if (product > num)
+		return (decrement_root(num, root - 1));
+	else if (product == num)
 		return (root);
 	else
 		return (-1);
@@ -46,18 +46,16 @@ int decrement_root(int n, int root)
 
 int _sqrt_recursion(int n)
 {
+	unsigned int num = n;
 	int root = n / 2;
-	int product = root * root;
+	unsigned long product = root * root;
 
-	if (n < 0)
-		return (-1);
-
-	if (product < n)
-		return (increment_root(n, root + 1));
-	else if (product > n)
-		return (decrement_root(n, root - 1));
-	else if (product == n)
+	if (product < num)
+		return (increment_root(num, root + 1));
+	else if (product > num)
+		return (decrement_root(num, root - 1));
+	else if (product == num)
 		return (root);
 
-	return (0);
+	return (-1);
 }
