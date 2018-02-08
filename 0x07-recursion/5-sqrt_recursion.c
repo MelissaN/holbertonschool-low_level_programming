@@ -12,7 +12,7 @@ int increment_root(unsigned int num, int root)
 	unsigned long product = root * root;
 
 	if (product < num)
-		return (increment_root(num, root - 1));
+		return (increment_root(num, root + 1));
 	else if (product == num)
 		return (root);
 	else
