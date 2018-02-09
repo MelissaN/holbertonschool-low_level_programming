@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 
 /**
  * _strchr - locate 1st occurrence of char in string and returns pointer there
@@ -17,7 +18,7 @@ char *_strchr(char *s, char c)
 	if (s[i] == c) /* if match, assign to address */
 		return (&s[i]);
 	else
-		return (0);
+		return (NULL);
 }
 
 /* pointer arithmetic version
@@ -32,6 +33,6 @@ char *_strchr(char *s, char c)
 	if (*(s + i) == c)
 	    return (s + i);
 	else
-	    return (0);
+	    return (NULL);
 }
 */

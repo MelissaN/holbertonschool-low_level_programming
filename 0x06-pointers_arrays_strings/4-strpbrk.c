@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 
 /**
  * _strpbrk - return pointer to byte in s that matches a byte in accept
@@ -24,6 +25,6 @@ char *_strpbrk(char *s, char *accept)
 		}
 		i++;
 	}
-	return (0); /* return NULL if no matches */
+	return (NULL); /* return NULL if no matches */
 
 }
