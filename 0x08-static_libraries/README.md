@@ -10,18 +10,15 @@
 This repository holds some projects I worked on for Holberton School. The goal is to learn coding and concepts through the C programming language.
 
 ## Concepts to be learned in this repository:
-* what is a static library
-* how does it work
-* how to create one
-* and how to use it
+* what a static library is
+* how it works
+* how to create one `ar -cr`
+* how to use it
 
 ## Description of what each file shows:
-libholberton.a
-	- created this static library containing some functions
-holberton.h
-	- included function prototypes of functions in library
-create_static_lib.sh
-	- shell script to compile pre linking and create static library
+1. libholberton.a - created this static library containing some functions
+2. holberton.h - included function prototypes of functions in library
+3. create_static_lib.sh - shell script to compile pre linking and create static library
 
 ## Authors
 * Melissa Ng
