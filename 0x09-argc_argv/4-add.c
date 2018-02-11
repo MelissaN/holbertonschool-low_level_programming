@@ -3,6 +3,9 @@
 #include <stdbool.h> /* bool data type */
 #include "holberton.h"
 
+#define TRUE 1
+#define FALSE 0
+
 /**
  * is_num - iterate through each argv to test if it's a number
  * @argvv: a argv
@@ -16,9 +19,9 @@ bool is_num(char *argvv)
 	for (j = 0; argvv[j]; j++)
 	{
 		if (!(argvv[j] > '0' && argvv[j] < '9'))
-			return (false);
+			return (FALSE);
 	}
-	return (true);
+	return (TRUE);
 }
 
 /**
