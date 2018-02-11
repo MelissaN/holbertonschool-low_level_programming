@@ -1,7 +1,6 @@
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* atoi */
 #include <stdbool.h> /* bool data type */
-#include "holberton.h"
 
 /**
  * is_num - iterate through each argv to test if it's a number
@@ -37,10 +36,10 @@ int main(int argc, char *argv[])
 	if (argc == 1)
 	{
 		printf("0\n");
-		return (1);
+		return (0);
 	}
 
-	/* check all arguments to add numbers see if number */
+	/* check all arguments to add numbers */
 	while (i < argc)
 	{
 		if (is_num(argv[i]))
