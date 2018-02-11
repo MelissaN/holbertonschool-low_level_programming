@@ -1,6 +1,7 @@
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* atoi */
 #include <stdbool.h> /* bool data type */
+#include <string.h>
 #include "holberton.h"
 
 #define TRUE 1
@@ -18,7 +19,7 @@ bool is_num(char *argvv)
 
 	for (j = 0; argvv[j]; j++)
 	{
-		if (!(argvv[j] > '0' && argvv[j] < '9'))
+		if (!(argvv[j] >= '0' && argvv[j] <= '9'))
 			return (FALSE);
 	}
 	return (TRUE);
