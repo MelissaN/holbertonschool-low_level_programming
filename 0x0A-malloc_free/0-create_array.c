@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * create_array - creates an array of chars, and initializes it with a specific char
+ * create_array - create array of chars and initialize with a specific char
  * @size: size of array
  * @c: fill array values with this char
  * Return: pointer to array
@@ -14,7 +14,7 @@ char *create_array(unsigned int size, char c)
 	char *arr;
 	int i = 0;
 
-	if (size <= 0) 	/* validate size input */
+	if (size <= 0) /* validate size input */
 		return (NULL);
 	arr = malloc(sizeof(char) * size); /* allocate memory */
 

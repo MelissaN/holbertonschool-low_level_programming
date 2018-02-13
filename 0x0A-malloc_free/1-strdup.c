@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * strdup - returns a pointer to a newly allocated space in memory,
+ * _strdup - returns a pointer to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter
  * @str: string to duplicate
  * Return: pointer to duplicated string in allocated memory
@@ -14,7 +14,7 @@ char *_strdup(char *str)
 	char *duplicate_str;
 	int i = 0;
 
-	if (str == 0) 	/* validate str input */
+	if (str == 0) /* validate str input */
 		return (NULL);
 	duplicate_str = malloc(sizeof(str)); /* allocate memory */
 
