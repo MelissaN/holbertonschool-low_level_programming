@@ -31,7 +31,7 @@ char *argstostr(int ac, char **av)
 	int len = 0, i, j, k = 0;
 
 	if (ac == 0 || av == NULL) /* validate input */
-		return(NULL);
+		return (NULL);
 
 	/* find length to malloc */
 	for (i = 0; i < ac; i++)
@@ -58,6 +58,6 @@ char *argstostr(int ac, char **av)
 		}
 		s[k++] = '\n';
 	}
-	
+
 	return (s);
 }
