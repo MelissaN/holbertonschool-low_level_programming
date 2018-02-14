@@ -12,21 +12,26 @@
 char *_strdup(char *str)
 {
 	char *duplicate_str;
-	int i = 0;
+	int i = 0, len = 0;
 
 	if (str == NULL) /* validate str input */
 		return (NULL);
-	duplicate_str = malloc(sizeof(str)); /* allocate memory */
+
+	while (*(str + i))
+		len++, i++;
+	len++; /* add null terminator to length */
+
+	duplicate_str = malloc(sizeof(char) * len); /* allocate memory */
 
 	if (duplicate_str == NULL) /* validate memory */
 		return (NULL);
 
-	while (*(str + i))
+	i = 0;
+	while (i < len)
 	{
 		*(duplicate_str + i) = *(str + i);
 		i++;
 	}
-	*(duplicate_str + i) = '\0';
 
 	return (duplicate_str);
 }
