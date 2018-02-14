@@ -31,14 +31,14 @@ char *argstostr(int ac, char **av)
 	int len = 0, i, j, k = 0;
 
 	if (ac == 0 || av == NULL) /* validate input */
-		return (NULL);
+		return(NULL);
 
 	/* find length to malloc */
 	for (i = 0; i < ac; i++)
 	{
 		len += _strlen(av[i]);
 	}
-	len += (ac - 1); /* add space for newlines */
+	len += (ac + 1); /* add space for newlines and null terminator */
 
 	/* allocate memory and free if error */
 	s = malloc(len * sizeof(char));
@@ -58,7 +58,6 @@ char *argstostr(int ac, char **av)
 		}
 		s[k++] = '\n';
 	}
-	s[k++] = '\0';
-
+	
 	return (s);
 }
