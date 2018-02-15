@@ -1,13 +1,21 @@
 #include <stdlib.h>
 #include "holberton.h"
 
-int _strlen (char *string)
+/**
+ * _strlen - calculate and return string length
+ * @string: string
+ * Return: string length
+ */
+
+int _strlen(char *string)
 {
 	int i;
-	for(i = 0; string[i] != '\0'; i++)
+
+	for (i = 0; string[i] != '\0'; i++)
 		;
 	return (i);
 }
+
 /**
  * string_nconcat - concatenate s1 and n bytes of s2; return ptr to string
  * @s1: string 1
@@ -34,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len = _strlen(s1) + num + 1; /* +1 to account for null pointer */
 
-	ptr = malloc(sizeof *ptr * len); /* malloc and check for error */
+	ptr = malloc(sizeof(*ptr) * len); /* malloc and check for error */
 	if (ptr == NULL)
 		return (NULL);
 
@@ -42,7 +50,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		ptr[i] = s1[i];
 	for (j = 0; j < num; j++)
 		ptr[i + j] = s2[j];
-	ptr[i+j] = '\0';
+	ptr[i + xj] = '\0';
 
 	return (ptr);
 }
