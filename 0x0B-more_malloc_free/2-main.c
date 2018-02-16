@@ -41,8 +41,8 @@ int main(void)
 	char *a;
 
 	a = _calloc(98, sizeof(char));
-	strcpy(a, "Holberton");
-	strcpy(a + 9, " School! :)\n");
+	strcpy(a, "testing");
+	strcpy(a + 9, " test");
 	a[97] = '!';
 	simple_print_buffer(a, 98);
 	free(a);

@@ -10,14 +10,14 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *ptr;
+	char *ptr;
 	unsigned int i; /* match unsigned arguments */
 
 	if (nmemb <= 0 || size <= 0) /* validate input */
 		return (NULL);
 
 	/* allocate memory and check if error */
-	ptr = malloc(size * nmemb);
+	ptr = malloc((size * nmemb) + 1);
 	if (ptr == NULL)
 		return (NULL);
 
