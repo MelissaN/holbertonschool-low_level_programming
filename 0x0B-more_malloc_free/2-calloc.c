@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	/* set allocated memory values to 0 */
-	for (i = 0; i < nmemb; i++)
+	for (i = 0; i < nmemb * size; i++)
 		*((char *)ptr + i) = 0; /* type cast assigning values*/
 
 	return (ptr);
