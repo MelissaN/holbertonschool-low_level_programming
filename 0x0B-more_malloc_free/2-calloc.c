@@ -10,7 +10,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
+	int *ptr;
 	unsigned int i; /* match unsigned arguments */
 
 	if (nmemb <= 0 || size <= 0) /* validate input */
@@ -25,5 +25,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb; i++)
 		ptr[i] = 0;
 
-	return (ptr);
+	return ((void *)ptr);
 }
