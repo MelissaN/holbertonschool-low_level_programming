@@ -2,7 +2,7 @@
 > Each repository in this folder illustrates an essential concept of programming,
 > specific to the C programming language.
 
-### Requirements
+### Requirements 
 * Language: C
 * OS: Ubuntu 14.04 LTS
 * Compiler: gcc 4.8.4
