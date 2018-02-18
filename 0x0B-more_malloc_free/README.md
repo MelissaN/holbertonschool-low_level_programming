@@ -1,8 +1,7 @@
 ## Malloc, Free
 > Each file in this repository holds code that illustrates an essential concept of programming,
 > specific to the C programming language:
-> How to use the exit function
-> What are the functions calloc and realloc from the standard library and how to use them
+> the exit function, and calloc and realloc from the standard library
 
 ### Requirements
 *  Language: C
@@ -19,8 +18,9 @@
 101. a program that multiply two positive numbers
 
 ### Authors
-Melissa Ng [![M](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/25px-Twitter_Bird.svg.png)](https://twitter.com/MelissaNg__)
+Melissa Ng [![M](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/30px-Twitter_Bird.svg.png)](https://twitter.com/MelissaNg__)
 
 ### License
  MIT
+---
  [![M](https://www.holbertonschool.com/holberton-logo-simple-200s.png)](https://www.holbertonschool.com)
