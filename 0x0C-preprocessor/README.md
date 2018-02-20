@@ -1,4 +1,4 @@
-## Project name
+## Preprocessor
 > Each file in this repository holds code that illustrates an essential concept of programming,
 > specific to the C programming language:
 > how to use macros, most common predefined macros, and how to guard header files
