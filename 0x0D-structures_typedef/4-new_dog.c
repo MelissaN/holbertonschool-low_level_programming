@@ -21,13 +21,13 @@ int len(char *str)
  * @member: copy of string
  * Return: copy of string
  */
-char *strcpy(char *member, char *str)
+char *strcpy(char *dest, char *src)
 {
-	int i;
+        int i;
 
-	for (i = 0; *(str + i); i++)
-		*(member + i) = *(str + i);
-	return (member);
+        for (i = 0; i <= len(src); i++)
+                dest[i] = src[i];
+        return (dest);
 }
 /**
  * new_dog - create new instance of struct dog
