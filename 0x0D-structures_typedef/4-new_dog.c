@@ -27,7 +27,6 @@ char *strcpy(char *member, char *str)
 
 	for (i = 0; *(str + i); i++)
 		*(member + i) = *(str + i);
-	*(member + i + 1) = '\0';
 	return (member);
 }
 /**
@@ -47,13 +46,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dog1 == NULL)
 		return (NULL);
 
-	if (age > 0.0) /* validate struct member and set value */
-		dog1->age = age;
-	else
-		return (NULL);
-
 	/* make copies of struct members and validate, else free on error */
-	copy_of_name = malloc(sizeof(char) * (len(name) + 1));
+	copy_of_name = malloc(len(name) + 1);
 	if (copy_of_name == NULL)
 	{
 		free(copy_of_name);
@@ -61,9 +55,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	copy_of_owner = malloc(sizeof(char) * (len(owner) + 1));
+	copy_of_owner = malloc(len(owner) + 1);
 	if (copy_of_owner == NULL)
 	{
+		free(copy_of_name);
 		free(copy_of_owner);
 		free(dog1);
 		return (NULL);
@@ -72,6 +67,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* set values of struct members to copies of arguments */
 	dog1->name = strcpy(copy_of_name, name);
 	dog1->owner = strcpy(copy_of_owner, owner);
+	dog1->age = age;
 
 	return (dog1);
 }
