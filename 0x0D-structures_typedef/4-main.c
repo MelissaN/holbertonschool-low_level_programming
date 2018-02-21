@@ -10,7 +10,7 @@ int main(void)
 {
 	dog_t *my_dog;
 
-	my_dog = new_dog("Django", 3.75, "Jon Snow");
+	my_dog = new_dog(NULL, 3.75, "Jon Snow");
 	printf("My name is %s, my owner is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->owner, my_dog->age);
 	return (0);
 }
