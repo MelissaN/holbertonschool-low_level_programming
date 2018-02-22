@@ -8,7 +8,7 @@
  * main will calculate the math via a function pointer.
  * prints sum, difference, product, dividend, or remainder
  * @argc: argument counter
- * @agrv: arguments
+ * @argv: arguments
  * Return: 0 on sucess
  */
 
@@ -17,14 +17,19 @@ int main(int argc, char *argv[])
 	int n1, n2;
 	int (*f)(int, int);
 
+	/* convert user input to ints and point to correct operator function */
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[3]);
+	f = get_op_func(argv[2]);
+
 	/* validate input */
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*'
-	    && argv[2][0] != '/' && argv[2][0] != '%')
+	if (f == NULL || (argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '*'
+			   && argv[2][0] != '/' && argv[2][0] != '%'))
 	{
 		printf("Error\n");
 		exit(99);
@@ -34,11 +39,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-
-	/* convert user input to ints and point to correct operator function */
-	n1 = atoi(argv[1]);
-	n2 = atoi(argv[3]);
-	f = get_op_func(argv[2]);
 
 	printf("%d\n", f(n1, n2)); /* calculate via function ptr */
 
