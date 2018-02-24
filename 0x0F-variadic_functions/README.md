@@ -10,13 +10,10 @@
 * Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 ### Description of what each file shows:
-0. 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+0. a function that returns the sum of all its parameters
+1. a function that prints numbers, followed by a new line
+2. a function that prints strings, followed by a new line
+3. a function that prints anything: char, int, float, string
 
 ### Authors
 Melissa Ng [![M](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/30px-Twitter_Bird.svg.png)](https://twitter.com/MelissaNg__)
