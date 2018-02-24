@@ -74,8 +74,9 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", separator);
 				choice[i].func(valist); /*access va_arg later*/
+				separator = ", ";
 			}
-			i++; separator = ", ";
+			i++;
 		}
 		j++;
 	}
