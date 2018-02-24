@@ -65,7 +65,7 @@ void print_all(const char * const format, ...)
 
 	/* iterate format; if datatype matched, access function via struct */
 	va_start(valist, format);
-	while (format[j] != '\0')
+	while (format != NULL && format[j] != '\0')
 	{
 		i = 0;
 		while (choice[i].letter != '\0')
@@ -75,9 +75,9 @@ void print_all(const char * const format, ...)
 				printf("%s", separator);
 				choice[i].func(valist); /*access va_arg later*/
 			}
-			i++;
+			i++; separator = ", ";
 		}
-		j++; separator = ", ";
+		j++;
 	}
 	va_end(valist);
 	printf("\n");
