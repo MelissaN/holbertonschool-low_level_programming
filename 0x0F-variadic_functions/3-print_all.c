@@ -57,20 +57,20 @@ void print_all(const char * const format, ...)
 	int i, j = 0;
 	va_list valist;
 
-	datatype choice[] = { {"c", print_char},
-			      {"i", print_int},
-			      {"f", print_float},
-			      {"s", print_string},
-			      {NULL, NULL} };
+	datatype choice[] = { {'c', print_char},
+			      {'i', print_int},
+			      {'f', print_float},
+			      {'s', print_string},
+			      {'\0', NULL} };
 
 	/* iterate format; if datatype matched, access function via struct */
 	va_start(valist, format);
 	while (format[j] != '\0')
 	{
 		i = 0;
-		while (choice[i].letter != NULL)
+		while (choice[i].letter != '\0')
 		{
-			if (*choice[i].letter == format[j])
+			if (choice[i].letter == format[j])
 			{
 				printf("%s", separator);
 				choice[i].func(valist); /*access va_arg later*/
