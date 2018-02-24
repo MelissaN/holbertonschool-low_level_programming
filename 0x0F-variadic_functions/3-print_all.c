@@ -17,7 +17,7 @@ void print_char(va_list valist)
  */
 void print_int(va_list valist)
 {
-	printf("%i", va_arg(valist, int));
+	printf("%d", va_arg(valist, int));
 }
 
 /**
@@ -74,7 +74,6 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", separator);
 				choice[i].func(valist); /*access va_arg later*/
-				break;
 			}
 			i++;
 		}
