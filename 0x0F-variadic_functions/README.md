@@ -19,7 +19,6 @@
 Melissa Ng [![M](https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/30px-Twitter_Bird.svg.png)](https://twitter.com/MelissaNg__)
 
 ### License
- MIT
 
 ---
- [![M](https://www.holbertonschool.com/holberton-logo-simple-200s.png)](https://www.holbertonschool.com)
+ [![M](https://pasteboard.co/H99KDXJ.png)](https://www.holbertonschool.com)
