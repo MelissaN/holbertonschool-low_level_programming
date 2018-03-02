@@ -6,7 +6,7 @@
 ### Description of what each file shows:
 * lists.h ----------- holds files' function prototypes and a sample struct linked list
 * main.c files ----- holds test files that showcase examples of how to use functions
-Files that start with:
+* Files that start with:
 0. a function that prints all elements of a linked list
 1. a function that returns the number of elements in a linked list
 2. a function that adds a new node at the beginning of a linked list
