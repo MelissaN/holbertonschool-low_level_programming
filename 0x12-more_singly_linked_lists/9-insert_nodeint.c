@@ -14,8 +14,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i = 0;
 	listint_t *new_node, *tmp;
 
-	/* account for empty list and empty pointer */
-	if (*head == NULL || head == NULL)
+	/* account for empty pointer */
+	if (head == NULL)
 		return (NULL);
 
 	/* malloc and set values for new node */
