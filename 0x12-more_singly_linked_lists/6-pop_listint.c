@@ -18,7 +18,8 @@ int pop_listint(listint_t **head)
 
 	data = tmp->n; /* save data to return later */
 
-	tmp = tmp->next; /* link head to next node */
+	*head = tmp->next; /* link head to next node */
+	free(tmp);
 
 	return (data);
 
