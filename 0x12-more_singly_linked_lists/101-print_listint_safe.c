@@ -10,11 +10,13 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	int num_nodes = 0;
+	size_t num_nodes = 0;
 	const listint_t *tmp;
 
-	tmp = head;
+	if (head == NULL)
+		return (0);
 
+	tmp = head;
 	while (tmp != NULL)
 	{
 		printf("[%p] %d\n", (void *)tmp, tmp->n);
