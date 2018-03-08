@@ -28,13 +28,15 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 
 	/* iterate tmp to idx prior to idx we want to delete */
-	while (i < (index - 1))
+	while (i < (index - 1) && tmp != NULL)
 	{
 		tmp = tmp->next;
 		i++;
-		if (tmp == NULL) /* account for index out of range */
-			return (-1);
 	}
+
+	/* account for idx out of range: don't delete and return */
+	if (i != (index - 1) || tmp->next == NULL)
+		return (-1);
 
 	/* link prior idx before delete */
 	tmp2 = tmp->next;
