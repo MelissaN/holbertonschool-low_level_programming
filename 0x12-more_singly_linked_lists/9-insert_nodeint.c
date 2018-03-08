@@ -34,16 +34,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	/* iterate to 1 before nth index to insert */
 	tmp = *head;
-	while ((i < (idx - 1)) && (tmp != NULL))
+	while (i < (idx - 1))
 	{
 		tmp = tmp->next;
 		i++;
-	}
-	/* account for idx out of range: don't add and return null */
-	if (((i + 1) != idx) || tmp == NULL)
-	{
-		free(new_node);
-		return (NULL);
+
+		if (tmp == NULL) /* account for idx out of range */
+		{
+			free(new_node);
+			return (NULL);
+		}
 	}
 
 	/* link into list */
