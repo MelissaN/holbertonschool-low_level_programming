@@ -24,6 +24,9 @@ unsigned int binary_to_uint(const char *b)
 	i = 0;
 	while (b[i])
 	{
+		if ((b[i] != '0') && (b[i] != '1'))
+			return (sum);
+
 		if (b[i] == '1')
 			sum += (1 * (1 << len));
 		i++;
@@ -33,7 +36,8 @@ unsigned int binary_to_uint(const char *b)
 	return (sum);
 }
 
-/* alternative method not using bitwise but a power of 2
+/*
+ * alternative method not using bitwise but a power of 2
  *
  *
  * unsigned int binary_to_uint(const char *b)
