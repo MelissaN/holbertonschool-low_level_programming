@@ -9,7 +9,7 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int max_bits;
-	int mask;
+	int mask = 1;
 
 	/* validate index is not out of range */
 	max_bits = (sizeof(unsigned long int) * 8);
@@ -17,7 +17,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 
 	/* create mask with 1 at index (...00100...) to work on that index */
-	mask = 1 << index;
+	mask <<= index;
 	*n = (*n | mask);
 
 	return (1);
