@@ -9,7 +9,7 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int max_bits;
-	int mask = 1;
+	unsigned long int mask = 1;
 
 	/* validate index is not out of range */
 	max_bits = (sizeof(unsigned long int) * 8);
