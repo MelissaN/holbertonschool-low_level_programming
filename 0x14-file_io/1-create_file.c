@@ -9,7 +9,7 @@ int _strlen(char *str)
 {
 	int len;
 
-	for(len = 0; str[len] != '\0'; len++)
+	for (len = 0; str[len] != '\0'; len++)
 		;
 
 	return (len);
@@ -26,6 +26,9 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int n_wrote;
+
+	if (!filename)
+		return (-1);
 
 	/* open file to see if it exists, create with permissions if not */
 	fd = open(filename, O_WRONLY | O_TRUNC);
