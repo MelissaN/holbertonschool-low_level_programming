@@ -30,18 +30,21 @@ int create_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	/* open file to see if it exists, create with permissions if not */
-	fd = open(filename, O_WRONLY | O_TRUNC);
+	/* create with permissions if file doesn't exist, else truncate */
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
+		return (-1);
+
+	/* if nothing to write, just return newly created file */
+	if (!text_content)
 	{
-		fd = open(filename, O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);
-		if (fd == -1)
-			return (-1);
+		close(fd);
+		return (1);
 	}
 
 	/* write */
 	n_wrote = write(fd, text_content, _strlen(text_content));
-	if (n_wrote == -1)
+	if (n_wrote == -1 || n_wrote != _strlen(text_content))
 	{
 		close(fd);
 		return (-1);
