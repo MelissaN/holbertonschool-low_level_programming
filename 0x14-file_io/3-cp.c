@@ -49,23 +49,23 @@ int main(int argc, char *argv[])
 	fd_1 = open(argv[1], O_RDONLY);
 	if (fd_1 == -1) /*sets file descriptor for copy-from file*/
 	{
-		close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
+/*		close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);*/
 		__exit(98, argv[1], 0);
 	}
 	while ((n_read = read(fd_1, buffer, 1024)) != 0) /*reads copy-from file*/
 	{
 		if (n_read == -1)
 		{
-			close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_1);
-			close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_2);
+/*			close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_1);*/
+/*			close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_2);*/
 			__exit(98, argv[1], 0);
 		}
 
 		n_wrote = write(fd_2, buffer, n_read); /*writes copy-to file*/
 		if (n_wrote == -1)
 		{
-			close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
-			close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);
+/*			close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);*/
+/*			close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);*/
 			__exit(99, argv[2], 0);
 		}
 	}
