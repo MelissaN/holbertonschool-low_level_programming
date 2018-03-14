@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 		close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
 		__exit(98, argv[1]);
 	}
-	while (n_read = read(fd_1, buffer, 1024) > 0) /*reads copy-from file*/
+	while ((n_read = read(fd_1, buffer, 1024)) > 0) /*reads copy-from file*/
 	{
 		if (n_read == -1)
 		{
