@@ -48,23 +48,23 @@ int main(int argc, char *argv[])
 		close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
 		__exit(98, argv[1]);
 	}
-
-	n_read = read(fd_1, buffer, 1024); /*reads copy-from file*/
-	if (n_read == -1)
+	while (n_read = read(fd_1, buffer, 1024) > 0) /*reads copy-from file*/
 	{
-		close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_1);
-		close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_2);
-		__exit(98, argv[1]);
-	}
+		if (n_read == -1)
+		{
+			close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_1);
+			close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_2);
+			__exit(98, argv[1]);
+		}
 
-	n_wrote = write(fd_2, buffer, n_read); /*writes copy-to file*/
-	if (n_wrote == -1)
-	{
-		close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
-		close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_1);
-		__exit(99, argv[2]);
+		n_wrote = write(fd_2, buffer, n_read); /*writes copy-to file*/
+		if (n_wrote == -1)
+		{
+			close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
+			close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_1);
+			__exit(99, argv[2]);
+		}
 	}
-
 	close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
 	close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_1);
 	return (0);
