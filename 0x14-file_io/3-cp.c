@@ -20,7 +20,7 @@ void __exit(int error, char *s)
 		exit(error);
 	default:
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", error);
-		exit(error);
+		exit(100);
 	}
 }
 
