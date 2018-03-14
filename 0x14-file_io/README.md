@@ -1,7 +1,7 @@
 ## File I/O
 > Each file in this repository holds code that illustrates an essential concept of programming,
 > specific to the C programming language:
-> how to use system calls to open, read, write, and close files; how to use flags O_RDONLY, O_WRONLY, O_RDWRA.
+> how to use system calls to open, read, write, and close files; how to use flags O_RDONLY, O_WRONLY, O_RDWR.
 
 ### Description of what each file shows:
 * main_test_files ----- folder holds test files that showcase examples of how to use functions
