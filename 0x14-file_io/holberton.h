@@ -9,6 +9,9 @@
 /* close */
 #include <unistd.h>
 
+/* dprintf */
+#include <stdio.h>
+
 /* malloc, free */
 #include <stdlib.h>
 
