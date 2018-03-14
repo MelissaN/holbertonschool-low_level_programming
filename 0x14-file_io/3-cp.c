@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 		close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
 		__exit(98, argv[1], 0);
 	}
-	while ((n_read = read(fd_1, buffer, 1024)) > 0) /*reads copy-from file*/
+	while ((n_read = read(fd_1, buffer, 1024)) != 0) /*reads copy-from file*/
 	{
 		if (n_read == -1)
 		{
