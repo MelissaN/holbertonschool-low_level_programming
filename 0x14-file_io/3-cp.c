@@ -4,8 +4,9 @@
  * __exit - prints error messages and exits with exit value
  * @error: num is either exit value or file descriptor
  * @s: str is a name, either of the two filenames
+ * Return: 0 on success
  **/
-void __exit(int error, char *s)
+int __exit(int error, char *s)
 {
 	switch (error)
 	{
@@ -22,6 +23,7 @@ void __exit(int error, char *s)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", error);
 		exit(100);
 	}
+	return (0);
 }
 
 /**
@@ -32,7 +34,7 @@ void __exit(int error, char *s)
  */
 int main(int argc, char *argv[])
 {
-	int fd_1, fd_2, n_read, n_wrote;
+	int fd_1, fd_2, n_read, n_wrote /*, temp1, temp2*/;
 	char *buffer[1024];
 
 	if (argc != 3)
@@ -45,27 +47,27 @@ int main(int argc, char *argv[])
 	fd_1 = open(argv[1], O_RDONLY);
 	if (fd_1 == -1) /*sets file descriptor for copy-from file*/
 	{
-		close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
+/*		close(fd_2) == -1 ? (__exit(fd_2, NULL)) : close(fd_2); */
 		__exit(98, argv[1]);
 	}
 	while ((n_read = read(fd_1, buffer, 1024)) > 0) /*reads copy-from file*/
 	{
 		if (n_read == -1)
 		{
-			close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_1);
-			close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_2);
+/*			close(fd_2) == -1 ? (__exit(fd_2, NULL)) : close(fd_1); */
+/*		        close(fd_1) == -1 ? (__exit(fd_1, NULL)) : close(fd_2); */
 			__exit(98, argv[1]);
 		}
 
 		n_wrote = write(fd_2, buffer, n_read); /*writes copy-to file*/
 		if (n_wrote == -1)
 		{
-			close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
-			close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_1);
+/*			close(fd_2) == -1 ? (__exit(fd_2, NULL)) : close(fd_2); */
+/*			close(fd_1) == -1 ? (__exit(fd_1, NULL)) : close(fd_1); */
 			__exit(99, argv[2]);
 		}
 	}
-	close(fd_2) == -1 ? (__exit(fd_2, NULL)) : (void)close(fd_2);
-	close(fd_1) == -1 ? (__exit(fd_1, NULL)) : (void)close(fd_1);
+	close(fd_2) == -1 ? (__exit(fd_2, NULL)) : close(fd_2);
+	close(fd_1) == -1 ? (__exit(fd_1, NULL)) : close(fd_1);
 	return (0);
 }
