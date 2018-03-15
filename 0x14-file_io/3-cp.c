@@ -30,8 +30,8 @@ int __exit(int error, char *s, int fd)
 
 /**
  * main - copies one file to another
- * @argc: arg counter
- * @argv: two args, first is file to copy from, second is file to copy to
+ * @argc: should be 3 (./a.out copyfromfile copytofile)
+ * @argv: first is file to copy from (fd_1), second is file to copy to (fd_2)
  * Return: 0 (success), 97-100 (exit value errors)
  */
 int main(int argc, char *argv[])
@@ -42,33 +42,28 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		__exit(97, NULL, 0);
 
+	/*sets file descriptor for copy-to file*/
 	fd_2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (fd_2 == -1) /*sets file descriptor for copy-to file*/
+	if (fd_2 == -1)
 		__exit(99, argv[2], 0);
 
+	/*sets file descriptor for copy-from file*/
 	fd_1 = open(argv[1], O_RDONLY);
-	if (fd_1 == -1) /*sets file descriptor for copy-from file*/
-	{
-/*		close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);*/
+	if (fd_1 == -1)
 		__exit(98, argv[1], 0);
-	}
-	while ((n_read = read(fd_1, buffer, 1024)) != 0) /*reads copy-from file*/
+
+	/*reads original file as long as there's more than 0 to read*/
+	/*copies/writes contents into new file */
+	while ((n_read = read(fd_1, buffer, 1024)) != 0)
 	{
 		if (n_read == -1)
-		{
-/*			close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_1);*/
-/*			close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_2);*/
 			__exit(98, argv[1], 0);
-		}
 
-		n_wrote = write(fd_2, buffer, n_read); /*writes copy-to file*/
+		n_wrote = write(fd_2, buffer, n_read);
 		if (n_wrote == -1)
-		{
-/*			close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);*/
-/*			close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);*/
 			__exit(99, argv[2], 0);
-		}
 	}
+
 	close(fd_2) == -1 ? (__exit(100, NULL, fd_2)) : close(fd_2);
 	close(fd_1) == -1 ? (__exit(100, NULL, fd_1)) : close(fd_1);
 	return (0);
