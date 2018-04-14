@@ -13,6 +13,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	/* do nothing if nothing to delete */
 	if (head == NULL || *head == NULL)
 		return (-1);
+
 	del = *head;
 
 	/* delete first node */

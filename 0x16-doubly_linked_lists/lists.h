@@ -33,7 +33,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 /* helper functions */
 dlistint_t *insert_node(dlistint_t *tmp, int n);
-void delete_first_node(dlistint_t **head);
-void delete_this(dlistint_t *del);
 
 #endif
