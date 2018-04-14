@@ -6,11 +6,11 @@
  * @head: pointer to head of list
  * @new: pointer to new node
  */
-void one_node_list_(dlistint_t **head, dlistint_t *new)
+void one_node_list_(dlistint_t **head, dlistint_t **new)
 {
-	*head = new;
-	new->next = NULL;
-	new->prev = NULL;
+	*head = *new;
+	(*new)->next = NULL;
+	(*new)->prev = NULL;
 }
 
 /**
@@ -45,7 +45,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/* account for empty linked list */
 	if (*head == NULL)
 	{
-		one_node_list_(head, new);
+		one_node_list_(head, &new);
 		return (new);
 	}
 
