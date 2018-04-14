@@ -1,7 +1,7 @@
 # More pointers, arrays, and strings
 
 ## Requirements
-* Language: C
+* Language: C89
 * OS: Ubuntu 14.04 LTS
 * Compiler: gcc 4.8.4
 * Style guidelines: [Betty style] (https://github.com/holbertonschool/Betty/wiki)
@@ -28,7 +28,7 @@ This repository holds some projects I worked on for Holberton School. The goal i
     - file should contain the exact password, no new line, no extra space
     - ltrace, ldd, gdb and objdump can help
     - install the openssl library to run the crackme2 program: `sudo apt-get install libssl-dev`
-
+    - [tutorial] (https://www.linux.com/blog/cracking-simple-passworded-file-beginners-guide-security)
 
 ## Authors
 * Melissa Ng
