@@ -12,6 +12,21 @@ int main(void)
 {
 	dlistint_t *head;
 
+	/* add to empty list */
+	head = NULL;
+	add_dnodeint(&head, 0);
+	print_dlistint(head);
+	printf("____________\n");
+
+	/* add to one node list */
+	head = NULL;
+	add_dnodeint(&head, 0);
+	add_dnodeint(&head, 1);
+	add_dnodeint(&head, 2);
+	print_dlistint(head);
+	printf("____________\n");
+
+	/* add to one node list */
 	head = NULL;
 	add_dnodeint(&head, 0);
 	add_dnodeint(&head, 1);
@@ -22,5 +37,6 @@ int main(void)
 	add_dnodeint(&head, 402);
 	add_dnodeint(&head, 1024);
 	print_dlistint(head);
+	printf("____________\n");
 	return (EXIT_SUCCESS);
 }

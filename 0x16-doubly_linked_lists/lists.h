@@ -32,8 +32,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 /* helper functions */
-void one_node_list(dlistint_t **head, dlistint_t *new);
-dlistint_t *create_node(const int n);
 dlistint_t *insert_node(dlistint_t *tmp, int n);
 void delete_first_node(dlistint_t **head);
 void delete_this(dlistint_t *del);

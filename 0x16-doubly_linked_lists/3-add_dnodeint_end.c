@@ -11,6 +11,9 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new, *last;
 
+	if (!head)
+		return (NULL);
+
 	/* malloc and set new node data */
 	new = malloc(sizeof(struct dlistint_s));
 	if (!new)
