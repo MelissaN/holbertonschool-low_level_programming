@@ -45,9 +45,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *del = NULL;
 
-	/* return fail if nothing to delete? */
-	if (*head == NULL)
+	if (!head)
 		return (-1);
+
+	/* do nothing if nothing to delete */
+	if (*head == NULL)
+		return (1);
 
 	/* delete first node */
 	if (index == 0)
