@@ -1,0 +1,16 @@
+#include "shell.h"
+
+/**
+ * print_argvs - print all argvs given to program without using argc
+ * Return: 0 on success
+ */
+void print_argvs(int ac, char **av)
+{
+	int i;
+	(void)ac;
+
+	i = 0;
+	while (av[i] != NULL)
+		printf("%s\n", av[i++]);
+
+}

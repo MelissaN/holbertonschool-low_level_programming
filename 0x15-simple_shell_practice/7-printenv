@@ -1,0 +1,55 @@
+#include "shell.h"
+
+/**
+ * print_one_env_var - prints an environmental variable asked for
+ */
+void print_one_env_var(char *var)
+{
+	char *envPath;
+	char *tok = NULL;
+
+	/* or print env when use getenv within process */
+	envPath = getenv(var);
+	printf("================\nAnother method to print -->%s\n", envPath);
+
+	/* print each directory in environmental variable PATH */
+	tok = strtok(envPath, ":");
+	while (tok != NULL)
+	{
+		printf("tok--> %s\n", tok);
+		tok = strtok(NULL, ":");
+	}
+
+}
+
+/**
+ * main - print environmental variables
+ */
+int main(int ac, char **av, char **env)
+{
+	(void)ac;
+	(void)av;
+	int i = 0;
+	extern char **environ;
+	char *path = "PATH";
+	char *cmd = "ls";
+
+	/* print env when given as argument param */
+	while (env[i] != NULL)
+	{
+		printf("%s\n", env[i++]);
+	}
+
+	/* or print env when use global variable environ within process */
+	printf("================\nAnother method to print -->%s\n", environ[5]);
+
+	/* env and environ will print the same addresses */
+	printf("%p\n", env[0]);
+	printf("%p\n", environ[0]);
+
+/*	print_one_env_var(path); */
+
+	_which(cmd);
+
+	return (0);
+}

@@ -1,0 +1,43 @@
+#include "shell.h"
+
+/**
+ * _execve - executes the command
+ */
+void _execve(char *cmd[])
+{
+	if ((execve(cmd[0], cmd, NULL)) == -1)
+	{
+		perror("Execution Error");
+	}
+}
+
+/**
+ * main - executes a command in different children. Each child
+ * should be created by the same process (the father). Wait for
+ * a child to exit before creating a new child.
+ * Return: 0 on sucess
+ */
+int main(void)
+{
+	pid_t child_pid;
+	char *cmd[] = {"/bin/ls", "-l", "/usr", NULL};
+	char *buffer;
+	long unsigned int size;
+
+	while (getline(&buffer, &size, stdin) > 0)
+	{
+		child_pid = fork(); /* creates children */
+		if (child_pid == -1)
+		{
+			perror("Error:");
+			return (1);
+		}
+		if (child_pid == 0) /* if child process, execute */
+		{
+			sleep(1);
+			_execve(cmd);
+		}
+	}
+
+	return (0);
+}

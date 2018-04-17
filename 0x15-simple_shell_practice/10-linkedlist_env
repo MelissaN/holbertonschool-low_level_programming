@@ -1,0 +1,105 @@
+#include "shell.h"
+
+/* linked list struct to hold environmental variables */
+typedef struct list
+{
+	char *env_var;
+	struct list *next;
+} list_t;
+
+/* add node with environmental variable data to end of list */
+void add_end_node(list_t **head, char *str)
+{
+	list_t *tmp = NULL;
+	list_t *new_node;
+
+	new_node = malloc(sizeof(list_t)); /* malloc and set new node values */
+	new_node->env_var = malloc(sizeof(char) * strlen(str));
+	new_node->env_var = strdup(str);
+	new_node->next = NULL;
+
+ 	tmp = *head;
+	if (*head == NULL) /* if no list exists, append as first node */
+		*head = new_node;
+	else if (tmp != NULL) /* else traverse to end and append */
+ 	{
+ 		while (tmp->next != NULL)
+ 		{
+ 				tmp = tmp->next;
+ 		}
+ 		tmp->next = new_node;
+ 	}
+
+}
+
+/* delete node at certain index */
+/*list_t **/ void delete_idx_node(list_t **head, int idx)
+{
+	list_t *tmp, *del = NULL;
+	int i = 0;
+
+	if (head == NULL || *head == NULL || idx < 0)
+		return/* (*head)*/;
+
+	tmp = *head;
+
+	while ((tmp->next != NULL) && (i < (idx - 1))) /* traverse to idx prior to node to delete */
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	if ((i != 0) && (i != (idx - 1))) /* check if idx is over linked list size */
+	{
+		printf("============idx over num nodes\n");
+		return/* (*head)*/;
+	}
+	if (idx == 0) /* link original head and delete if 0th node */
+	{
+		del = tmp;
+		*head = tmp->next;
+		free(del->env_var);
+		free(del);
+	}
+	else /* delete for other indexes linking tmp ptrs */
+	{
+		printf("===============delete: %s\n", (tmp->next)->env_var);
+		del = tmp->next;
+		tmp->next = (tmp->next)->next;
+		free(del->env_var);
+		free(del);
+	}
+	return/* (*head)*/;
+}
+
+/* create and print a linked list of environmental variables */
+int main(int ac, char **av, char **env)
+{
+	(void)ac;
+	(void)av;
+	int j = 0;
+	list_t *linked_env = NULL;
+	list_t *tmp, *tmp2 = NULL;
+
+	while (env[j]) /* created linked list of env variables */
+	{
+		add_end_node(&linked_env, env[j]);
+		j++;
+	}
+	tmp = linked_env; /* traverse and print with tmp pointer */
+	while (tmp != NULL)
+	{
+		printf("%s\n", tmp->env_var);
+		tmp = tmp->next;
+	}
+	/*linked_env =*/ delete_idx_node(&linked_env, 0); /* test deletions */
+	/*linked_env =*/ delete_idx_node(&linked_env, 0);
+	/*linked_env =*/ delete_idx_node(&linked_env, 3);
+	tmp2 = linked_env; /* traverse and print again to check success */
+	while (tmp2 != NULL)
+	{
+		printf("%s\n", tmp2->env_var);
+		tmp2 = tmp2->next;
+	}
+
+	return (0);
+}

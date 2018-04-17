@@ -1,0 +1,24 @@
+#include "shell.h"
+
+/**
+ * getpids - print parent and process id
+ */
+void getpids(void)
+{
+	pid_t pid, fpid;
+
+	pid = getpid(); /* parent process */
+	fpid = fork(); /* child process */
+
+	if (fpid == 0)
+	{
+		printf("I'm child! Parent pid: %u, child id: %u\n", pid, fpid);
+	}
+	else
+	{
+		printf("I'm father! Parent pid: %u, child id: %u\n", pid, fpid);
+	}
+
+}
+
+/* See max process id: cat /proc/sys/kernel/pid_max */

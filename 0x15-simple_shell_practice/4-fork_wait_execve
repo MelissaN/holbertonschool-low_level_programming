@@ -1,0 +1,55 @@
+#include "shell.h"
+
+/**
+ * _execve - executes the command
+ */
+void _execve(char *cmd[])
+{
+	if ((execve(cmd[0], cmd, NULL)) == -1)
+	{
+		perror("Execution Error");
+	}
+}
+
+/**
+ * main - executes a command in 5 different children. Each child
+ * should be created by the same process (the father). Wait for
+ * a child to exit before creating a new child.
+ * Return: 0 on sucess
+ */
+int main(void)
+{
+	pid_t child_pid;
+	int status;
+	int num_children = 0;
+	char *cmd[] = {"/bin/echo", "-l", "/tmp", NULL};
+
+	while (num_children < 5)
+	{
+		child_pid = fork(); /* creates children */
+		if (child_pid == -1)
+		{
+			perror("Error:");
+			return (1);
+		}
+		if (child_pid == 0) /* if child process, execute */
+		{
+			printf("I'm a child pid: %d!\n", (int)child_pid);
+			sleep(3);
+	       		_execve(cmd);
+		}
+		else /* parent waits for child to execute first */
+		{
+			if (wait(&status) == -1)
+			{
+				perror("Wait status returned -1");
+				return (-1);
+			}
+			printf("current fork pid: %d, father pid: %d!\n",
+			       (int)child_pid, (int)getppid());
+		}
+		num_children++;
+	}
+
+	return (0);
+}

@@ -1,0 +1,46 @@
+#include "shell.h"
+
+/**
+ * _strtok - splits string and returns array of words
+ * Return: 0 on sucess
+ */
+char **_strtok(char *cmd)
+{
+	char *tok = NULL;
+	char **tokens = NULL;
+	int num_tokens = 1, i = 0, ptr = 0;
+	size_t j;
+
+	/* get num tokens and malloc array of pointers to hold num tokens */
+	while (cmd[i] != '\0')
+	{
+		if (cmd[i] != ' ' && (cmd[i + 1] == ' ' || cmd[i + 1] == '\0'))
+			num_tokens++;
+		i++;
+	}
+	tokens = malloc(sizeof(char *) * num_tokens + 1);
+	if (tokens == NULL)
+		return (NULL);
+
+	/* for each pointer, malloc length of each token, and store token */
+	tok = strtok(cmd, " ");
+	while (tok != NULL)
+	{
+		tokens[ptr] = malloc(sizeof(char) * strlen(tok) + 1);
+		j = 0;
+		while (j < strlen(tok))
+		{
+			tokens[ptr][j] = tok[j];
+			j++;
+		}
+		tokens[ptr][j] = '\0';
+		tok = strtok(NULL, " ");
+		ptr++;
+//		printf("%s\n", tokens[ptr]);
+	}
+	tokens[ptr] = NULL;
+
+	return (tokens);
+}
+
+/* char *strtok(char *str, const char *delim); */

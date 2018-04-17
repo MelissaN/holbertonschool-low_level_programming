@@ -1,0 +1,35 @@
+#include "shell.h"
+#include "errno.h"
+
+/**
+ * main - set and unset environment
+ * Return: 0 on success
+ */
+int main(void)
+{
+	char *var;
+	extern char** environ;
+
+//	while (environ[i])
+//	{
+//	printf("%s\n", environ[i]);
+//	i++;
+//	}
+//
+	/* create new environmental variable */
+	setenv("TEST_VAR", NULL, 0);
+	var = getenv("TEST_VAR");
+	printf("%s\n", var);
+
+	/* delete environmental variable */
+	unsetenv("TEST_VAR");
+	var = getenv("TEST_VAR");
+
+	/* no error - will print 0: success */
+	printf("%d: %s\n", errno, strerror(errno));
+
+	return (0);
+}
+
+/* int setenv(const char *name, const char *value, int overwrite); */
+/* int unsetenv(const char *name); */
