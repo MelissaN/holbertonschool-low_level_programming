@@ -5,13 +5,13 @@
  * @ht: hash table
  * @key: key; can't be empty string
  * @value: value
- * @node: node
  * @idx: index to insert in at hash table
  * Return: 1 if success, 0 if fail
  */
 int create_and_add_node(hash_table_t *ht, const char *key, const char *value,
-			hash_node_t *node, unsigned long int idx)
+			unsigned long int idx)
 {
+	hash_node_t *node = NULL;
 	char *k;
 	char *v;
 
@@ -83,5 +83,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
-	return (create_and_add_node(ht, key, value, node, idx));
+	return (create_and_add_node(ht, key, value, idx));
 }
