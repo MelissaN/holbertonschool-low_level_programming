@@ -69,8 +69,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	idx = key_index((const unsigned char *)key, ht->size);
 
-	printf("%lu\n", idx);
-
 	node = (ht->array)[idx];
 	while (node && (strcmp(key, node->key) != 0))
 		node = node->next;
