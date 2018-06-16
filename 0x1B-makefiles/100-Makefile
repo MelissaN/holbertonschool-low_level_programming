@@ -1,0 +1,29 @@
+# Usage: make [all/clean/oclean/fclean] -f [file]
+
+
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# standard rule to say rules below are not filenames
+.PHONY: all clean oclean fclean re
+
+# makes executable
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# deletes tmp files & executable
+clean:
+	$(RM) *~ $(NAME)
+
+# deletes object files
+oclean:
+	$(RM) $(OBJ)
+
+# deletes all (tmp files, executable, & obj files)
+fclean: clean oclean
+
+# deletes all & recompiles all source files
+re: oclean all
