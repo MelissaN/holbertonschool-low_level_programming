@@ -9,10 +9,10 @@ RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # only use gcc flags when compiling to obj files
-%.o: %.c
+%.o: %.c m.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-# make all == makes executable
+# makes executable
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
