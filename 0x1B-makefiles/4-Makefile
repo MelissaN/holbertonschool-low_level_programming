@@ -10,13 +10,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # make all == makes executable
 all: m.h $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
-
-# compile to object code with flags
-main.o:
-	$(CC) $(CFLAGS) -c -o main.o main.c
-holberton.o:
-	$(CC) $(CFLAGS) -c -o holberton.o holberton.c
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 # deletes tmp files & executable
 clean:
