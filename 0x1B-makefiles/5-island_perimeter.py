@@ -9,10 +9,9 @@ def island_perimeter(grid):
     if grid == []:
         return 0
 
-    leftmost = rightmost = 0
-    length = 0
+    leftmost = rightmost = flag = length = 0
     for i in range(len(grid)):
-        w_idx = w_idxL = w_idxR = -1
+        w_idxL = w_idxR = -1
         for j in range(len(grid[0])):
             if grid[i][j] == 1 and w_idxL >= 0:
                 w_idxR += 1
@@ -20,10 +19,13 @@ def island_perimeter(grid):
                 w_idxL = w_idxR = j
             else:
                 pass
+            if flag == 0 or w_idxL > -1:
+                leftmost = w_idxL
+            if (w_idxL < leftmost) and w_idxL != -1:
+                leftmost = w_idxL
+            if (w_idxR > rightmost):
+                rightmost = w_idxR
         if w_idxL >= 0:
             length += 1
-        if (w_idxL < leftmost):
-            leftmost = w_idxL
-        if (w_idxR > rightmost):
-            rightmost = w_idxR
+        flag = 1
     return (((rightmost - leftmost + 1) + length) * 2)
