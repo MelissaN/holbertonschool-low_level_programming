@@ -8,9 +8,13 @@ NAME = holberton
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+# only use gcc flags when compiling to obj files
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 # make all == makes executable
 all: m.h $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 # deletes tmp files & executable
 clean:
