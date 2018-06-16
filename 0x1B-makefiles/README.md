@@ -1,6 +1,6 @@
 ## Makefile
 > Each file in this repository holds code that illustrates an essential concept of programming,
-> specific to make and Makefiles in Unix. [These files are used for compiling](https://github.com/holbertonschool/0x1B.c) Usage: ```make -f [file]```
+> specific to make and Makefiles in Unix. [These files are used for compiling.](https://github.com/holbertonschool/0x1B.c) Usage: ```make [all/clean/oclean/fclean/re] -f [file]```
 
 ![](https://image.ibb.co/b7X82y/Capture.png)
 
@@ -8,13 +8,13 @@
 * holberton.c ---- function that displays visual seahorse
 * main.c --------- program that holds above function
 * Files that start with:
-0.
-1. 
-2. 
-3. 
-4. 
-5. 
-100. 
+0. simple makefile that next files will build on
+1. add macros/variables for compiler and .c source files
+2. add macros for object files and executable; add rule for make all
+3. add macro for rm; add cleaning rules; add recompile rule
+4. add compile flags
+5. Python module to find perimeter of grid where there are 1's
+100. 100- build on 4; add .PHONY rule
 
 ### Environment
 * Language: C89
