@@ -51,7 +51,7 @@ int jump_search(int *array, size_t size, int value)
 			}
 			return (-1);
 		}
-		if (j == (jumps * jumps))
+		if (j + jumps + jumps > size)
 		{
 			print_i(array, j);
 			print_range(j, j + jumps);
